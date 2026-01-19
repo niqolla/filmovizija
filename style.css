@@ -1,0 +1,140 @@
+body {
+  justify-content: space-between;
+  background-color: #0d203b;
+  font-family: Arial, sans-serif;
+  background-image: url("./bcg.jpg");
+  background-size: cover;
+  background-attachment: fixed; 
+  width: 100%;
+  margin: 0;
+}
+
+.container {
+    justify-content: space-between;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; 
+}
+
+@keyframes flashing {
+    0% {
+        background-color: #ff0000; /* Red */
+      }
+      20% {
+        background-color: #ff8000; /* Orange */
+      }
+      40% {
+        background-color: #ffff00; /* Yellow */
+      }
+      60% {
+        background-color: #00ff00; /* Green */
+      }
+      80% {
+        background-color: #0000ff; /* Blue */
+      }
+      100% {
+        background-color: #ff00ff; /* Purple */
+      }
+    }
+  
+  .karaoke-container {
+    justify-content: space-between;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    animation: flashing 2s linear infinite; /* 2s duration, linear timing, infinite loop */
+  }
+
+.container-to-be-watched {
+    justify-content: space-between;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffde9c;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; 
+}
+
+/* HEAD CONTAINER FOR LOGOS */
+.head-container {
+    max-width: 1000px;
+    justify-content: space-between;
+    margin: auto;
+    background-color: #0d203bce;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    border-radius: 10px;
+    display: flex; 
+}
+
+.hc-left-image {
+    flex: 0 0 30%; 
+    text-align: left; 
+    width: 150px; 
+    height: 150px;
+}
+.hc-center-image {
+    flex: 0 0 40%; 
+    text-align: center; 
+    width: 150px; 
+    height: 150px;
+}
+.hc-right-image {
+    flex: 0 0 30%; 
+    text-align: right; 
+    width: 150px; 
+    height: 150px;
+}
+.hc-left-image img{
+    max-width: 60%; 
+    height: auto;
+}
+.hc-center-image img{
+    max-width: 100%; 
+    height: auto;
+}
+.hc-right-image img {
+    max-width: 60%; 
+    height: auto;
+}
+
+
+/* ELEMENTS FOR OTHER */
+.box-image {
+    flex: 0 0 20%; 
+    text-align: left; 
+}
+
+.box-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.box-info {
+    flex: 0 0 80%; 
+    text-align: left; 
+    margin-top: 0; 
+    padding: 0 20px; 
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
