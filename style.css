@@ -1,23 +1,53 @@
+/* ---------------------------
+   Base
+   --------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
 body {
-  justify-content: space-between;
-  background-color: #0d203b;
-  font-family: Arial, sans-serif;
-  background-image: url("./bcg.jpg");
-  background-size: cover;
-  background-attachment: fixed; 
-  width: 100%;
   margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #0b1220;
+  background-color: #0d203b;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.container {
-    justify-content: space-between;
-    max-width: 800px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex; 
+/* dark overlay so white cards stay readable on busy backgrounds */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 10, 22, 0.55);
+  pointer-events: none;
+  z-index: -1;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 16px 40px;
+  display: grid;
+  gap: 18px;
+}
+
+/* ---------------------------
+   Movie cards
+   --------------------------- */
+.movie-card {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
 }
 
 @keyframes flashing {
@@ -64,16 +94,53 @@ body {
 }
 
 /* HEAD CONTAINER FOR LOGOS */
+.page-header {
+  position: relative;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* background images */
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("./img/popcorn-rb.png"),
+    url("./img/roll-rb.png");
+
+  background-repeat: no-repeat;
+  background-position:
+    center,
+    left -40px center,
+    right -40px center;
+
+  background-size:
+    cover,
+    180px,
+    180px;
+}
+
+/* center logo */
 .head-container {
-    max-width: 1000px;
-    justify-content: space-between;
-    margin: auto;
-    background-color: #0d203bce;
-    padding: 20px;
-    padding-top: 30px;
-    padding-bottom: 70px;
-    border-radius: 10px;
-    display: flex; 
+  position: relative;
+  z-index: 2;
+}
+
+.brand-img { 
+  width: min(900px, 100%); 
+  margin: 0 auto; 
+}
+
+.head-container {
+  max-width: 980px;
+  margin: 0 auto;
+  background: rgba(13, 32, 59, 0.82);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
 }
 
 .hc-left-image {
@@ -110,31 +177,64 @@ body {
 
 /* ELEMENTS FOR OTHER */
 .box-image {
-    flex: 0 0 20%; 
-    text-align: left; 
+    width: 100%;
 }
 
 .box-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
 }
 
 .box-info {
-    flex: 0 0 80%; 
-    text-align: left; 
-    margin-top: 0; 
-    padding: 0 20px; 
+    padding: 2px 2px;
 }
 
-h1 {
-    font-size: 32px;
-    margin-bottom: 5px;
+.box-info h2 {
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 0 0 6px;
 }
 
-p {
-    font-size: 16px;
-    margin-bottom: 10px;
+.box-info h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(11, 18, 32, 0.65);
+}
+
+.box-info p {
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 0 0 10px;
+}
+
+/* ---------------------------
+   Mobile / small screens
+   --------------------------- */
+@media (max-width: 640px) {
+  body { background-attachment: scroll; }
+
+  .page-header { padding: 12px 12px 0; }
+  .page { padding: 12px 12px 28px; gap: 14px; }
+
+  .movie-card {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .box-image img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .box-info h2 { font-size: 20px; }
+  .box-info p { font-size: 15px; }
+}
+
+/* Slightly larger tablets */
+@media (min-width: 641px) and (max-width: 900px) {
+  .movie-card { grid-template-columns: 140px 1fr; }
 }
 

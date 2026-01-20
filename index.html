@@ -1,70 +1,48 @@
 <!DOCTYPE html>
-<html>
-  
+<html lang="mk">
+
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Филмовизија</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./img/logo.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="./img/mol.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./img/logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/mol.ico" type="image/x-icon" />
   </head>
 
   <body>
 
-    <br><br><br><br>
-
-    <div class="head-container">
-      <div class="hc-left-image">
-          <img src="./img/popcorn-rb.png" alt="">
+    <header class="page-header" aria-label="Филмовизија">
+      <div class="head-container">
+        <img class="brand-img" src="./img/filmovizija-rb.png" alt="Филмовизија" />
       </div>
-      <div class="hc-center-image" >
-          <img src="./img/filmo-rb.png" alt="">
-      </div>
-      <div class="hc-right-image">
-          <img src="./img/roll-rb.png" alt="">
-      </div>
-    </div>
+    </header>
 
-    <br><br>
+    <main class="page" aria-label="Листа на филмови">
 
-    <!-- 
-        <div class="container-to-be-watched">
-
-          <div class="box-image">
-            <img src="./movie_img/ex.png" alt="">
-          </div>
-          
-          <div class="box-info">
-            <h2>Movie name</h2>
-            <h4>Date</h4>
-            <p>Description</p>
-          </div>
-          
+      <article class="movie-card">
+        <div class="box-image">
+          <img src="./movie_img/gf3.jpg" alt="">
         </div>
-        <br><br>  
-    -->  
+        <div class="box-info">
+          <h2>Кумот 3 (1990)</h2>
+          <h4>20 Јан 2026</h4>
+          <p>Кумот 3 ја заокружува сагата со обидот на Мајкл Корлеоне да се ослободи од минатото и да го спаси семејството од сопствените грешки. Тажен и зрел филм за каење, наследство и цената што ја плаќаат оние што предолго живееле со моќта.</p>
+        </div>
+      </article>
 
-    <div class="container">
+      <article class="movie-card">
+        <div class="box-image">
+          <img src="./movie_img/gf2.jpeg" alt="">
+        </div>
+        <div class="box-info">
+          <h2>Кумот 2 (1974)</h2>
+          <h4>19 Јан 2026</h4>
+          <p>Кумот 2 ја продлабочува приказната за моќта и семејството, следејќи го подемот на младиот Вито Корлеоне и тешките одлуки на Мајкл како лидер. Мрачен, тивко напнат и исклучително мајсторски раскажан филм што покажува колку скапо може да чини власта.</p>
+        </div>
+      </article>
 
-      <div class="box-image">
-        <img src="./movie_img/gf2.jpeg" alt="">
-      </div>
-      
-      <div class="box-info">
-        <h2>Кумот 2</h2>
-        <h4>19 Јан 2026</h4>
-        <p>„Кумот 2“ е ремек-дело на Френсис Форд Копола кое истовремено служи како продолжение и како предисторија на оригиналниот филм.</p>
-        <p>Дејството паралелно го следи Мајкл Корлеоне во 1950-тите додека се обидува да ја зацврсти моќта на фамилијата, и младиот Вито Корлеоне во раните 1900-ти кој го започнува својот пат во Њујорк. </p>
-      </div>
-    
-    </div>
-    <br><br>  
+    </main>
 
   </body>
-  
 </html>
