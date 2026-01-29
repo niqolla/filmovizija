@@ -1,0 +1,41 @@
+{% extends 'family/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h2 class="mb-4 text-center">Предлози</h2>
+
+        <!-- Add Suggestion Form -->
+        <div class="card p-4 mb-5">
+            <h4 class="mb-3">Додај Предлог</h4>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.title }}
+                </div>
+                <div class="mb-3">
+                    {{ form.description }}
+                </div>
+                <button type="submit" class="btn btn-primary">Прати Предлог</button>
+            </form>
+        </div>
+
+        <!-- Suggestions List -->
+        <div class="row">
+            {% for suggestion in suggestions %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 p-3">
+                    <h5 class="fw-bold">{{ suggestion.title }}</h5>
+                    <h6 class="text mb-2">Од {{ suggestion.author.username }} ({{ suggestion.created_at|date:"M d" }})</h6>
+                    <p class="card-text">{{ suggestion.description|linebreaksbr }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center text-muted">
+                <p>Сè уште нема предлози.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
